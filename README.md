@@ -1,2 +1,2 @@
-# eks-platform-manifests
-Kubernetes manifests for a 5-service microservices voting app — Helm chart with NetworkPolicy segmentation, RBAC, probes, and HPA, deployed via GitOps.
+This repo contains the Kubernetes manifests (packaged as a Helm chart) for a microservices voting application — Vote, Redis, Worker, Postgres, and Result — deployed onto the EKS cluster provisioned in the companion infrastructure repo: [link to eks-platform-infra].
+The chart demonstrates production-pattern platform engineering practices: NetworkPolicy segmentation enforcing service-to-service boundaries (e.g., the frontend cannot reach the database directly), least-privilege RBAC, liveness/readiness probes and resource limits on every workload, PodDisruptionBudgets, and Horizontal Pod Autoscaling. Deployment is managed via GitOps (ArgoCD) rather than manual kubectl apply.
