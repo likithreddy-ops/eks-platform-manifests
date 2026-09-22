@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: role-binding
+subjects:
+- kind: ServiceAccount
+  name: vote-app-service-account
+roleRef:
+  kind: Role
+  name: permissions  ## from role.yaml
+  apiGroup: rbac.authorization.k8s.io

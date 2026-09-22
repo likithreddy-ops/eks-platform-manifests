@@ -1,0 +1,6 @@
+apiVersion: v2
+name: voter-app
+version: 0.1.0
+description: A Helm chart for Kubernetes manifest files of the voter-app application
+type: application
+appVersion: 1.0.0

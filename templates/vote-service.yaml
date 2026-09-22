@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vote-service
+  labels:
+    app: vote
+    tier: frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: vote # Must match the label on your pods
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80         # The port the Service listens to inside the cluster
+      targetPort: 80 # The port the application is listening on inside the pod

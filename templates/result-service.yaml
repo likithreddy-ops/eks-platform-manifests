@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: result-service
+  labels:
+    app: result
+    tier: frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: result # Must match the label on your pods
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80         # The port the Service listens to inside the cluster
+      targetPort: 80 # The port the application is listening on inside the pod
