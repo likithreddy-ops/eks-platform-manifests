@@ -20,6 +20,9 @@ spec:
       containers:
       - name: result
         image: dockersamples/examplevotingapp_result
+        env:
+        - name: DATABASE_URL
+          value: postgres://postgres:postgres@db:5432/postgres
         ports:
         - containerPort: 80
         livenessProbe:
